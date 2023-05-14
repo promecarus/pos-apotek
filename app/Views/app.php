@@ -1,17 +1,19 @@
 <!DOCTYPE html>
+<!-- <html data-theme="light" lang="en"> -->
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="<?= base_url('css/app.min.css') ?>">
+    <title><?= isset($title) ? $title . " | " : "" ?>POS-Apotek</title>
+    <link rel="stylesheet" href="/css/app.min.css">
 </head>
 
 <body>
     <?= $this->renderSection('content') ?>
-    <script src="<?= base_url('js/app.min.js') ?>"></script>
+    <script src="/js/app.min.js"></script>
+    <script src="/js/all.min.js"></script>
 </body>
 
 </html>
