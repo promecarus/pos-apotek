@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <?= $this->include('component/toast') ?>
     <?= $this->renderSection('content') ?>
     <script src="/js/app.min.js"></script>
     <script src="/js/all.min.js"></script>

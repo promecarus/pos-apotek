@@ -1,14 +1,6 @@
 <?= $this->extend('app') ?>
 
 <?= $this->section('content') ?>
-<div class="toast toast-top toast-end">
-    <?php if (session()->getFlashdata('message_error')) : ?>
-        <span class="alert alert-error"><?= session()->getFlashdata('message_error') ?></span>
-    <?php elseif (session()->getFlashdata('message_success')) : ?>
-        <span class="alert alert-success"><?= session()->getFlashdata('message_success') ?></span>
-    <?php endif; ?>
-</div>
-
 <div class="flex justify-center items-center h-screen">
     <div class="card shadow-lg p-6 w-96">
         <h2 class="text-xl font-semibold mb-3">Sign In</h2>
