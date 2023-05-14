@@ -1,4 +1,4 @@
-<div id="notification" class="toast toast-top toast-end">
+<div id="notification" class="toast toast-end">
     <?php if (session()->getFlashdata('message_error')) : ?>
         <span class="alert alert-error"><?= session()->getFlashdata('message_error') ?></span>
     <?php elseif (session()->getFlashdata('message_success')) : ?>
