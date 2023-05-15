@@ -45,9 +45,9 @@ class Filters extends BaseConfig
                 'except' => [
                     'auth/signout',
                     '/',
-                    'superadmin/*',
-                    'admin/*',
-                    'user/*'
+                    'master/*',
+                    'transaksi/*',
+                    'report/*'
                 ]
             ],
         ],

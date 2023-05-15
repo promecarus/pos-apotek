@@ -49,7 +49,7 @@ class AuthFilter implements FilterInterface
         if (!is_null(session()->get('logged_in'))) {
             return redirect()
                 ->to(base_url())
-                ->with('message_warning', 'Anda sudah login!');
+                ->with('message_warning', 'Anda sudah login.');
         }
     }
 }

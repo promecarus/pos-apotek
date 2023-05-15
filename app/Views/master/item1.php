@@ -1,5 +1,5 @@
-<?= $this->extend('template') ?>
+<?= $this->extend('layout/dashboard') ?>
 
 <?= $this->section('content') ?>
-amoingus
+
 <?= $this->endSection() ?>

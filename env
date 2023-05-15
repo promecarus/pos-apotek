@@ -25,13 +25,16 @@
 # app_baseURL = ''
 # app.forceGlobalSecureRequests = false
 # app.CSPEnabled = false
+# app.concept = 'POS'
+# app.theme = 'Apotek'
+# app.appTimezone = Asia/Jakarta
 
 #--------------------------------------------------------------------
 # DATABASE
 #--------------------------------------------------------------------
 
 # database.default.hostname = localhost
-# database.default.database = ci4
+# database.default.database = db_apotek
 # database.default.username = root
 # database.default.password = root
 # database.default.DBDriver = MySQLi
@@ -39,7 +42,7 @@
 # database.default.port = 3306
 
 # database.tests.hostname = localhost
-# database.tests.database = ci4_test
+# database.tests.database = db_apotek_test
 # database.tests.username = root
 # database.tests.password = root
 # database.tests.DBDriver = MySQLi
