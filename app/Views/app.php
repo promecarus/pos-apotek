@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<!-- <html data-theme="light" lang="en"> -->
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= (isset($title) ? $title . " | " : "") . ($_ENV['app.concept'] . ' ' . $_ENV['app.theme']) ?></title>
-    <link rel="stylesheet" href="/css/app.min.css">
+    <title><?= ($_ENV["app.concept"] . " " . $_ENV["app.theme"]) . (isset($title) ? " | " . $title  : "") ?></title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="/plugins/toastr/toastr.min.css">
+    <?= $this->renderSection("link") ?>
 </head>
 
-<body>
-    <?= $this->include('component/toast') ?>
-    <?= $this->renderSection('content') ?>
-    <script src="/js/app.min.js"></script>
-    <script src="/js/all.min.js"></script>
+<body <?= isset($bodyClass) ? "class=\"{$bodyClass}\"" : "" ?>>
+    <script src="/dist/js/adminlte.min.js"></script>
+    <script src="/plugins/jquery/jquery.min.js"></script>
+    <script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <?= $this->renderSection("content") ?>
 </body>
 
 </html>
