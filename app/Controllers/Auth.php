@@ -184,9 +184,10 @@ class Auth extends BaseController
 
     public function signout()
     {
-        session()->destroy();
+        session()->remove(["nama", "username", "role_id", "logged_in"]);
         return redirect()
-            ->to(base_url('auth/signin'))
-            ->with('message_success', 'Logout berhasil. Sampai jumpa lagi!');
+            ->to(base_url("auth/signin"))
+            ->with("message", "Logout berhasil, sampai jumpa lagi.")
+            ->with("type", "success");
     }
 }
