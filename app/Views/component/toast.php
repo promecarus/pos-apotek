@@ -1,10 +1,23 @@
-<div class="hidden"></div>
-<div id="notification" class="toast toast-end">
-    <?php if (session()->getFlashdata('message_error')) : ?>
-        <span class="alert alert-error"><i class="fa-solid fa-circle-exclamation"></i> <?= session()->getFlashdata('message_error') ?></span>
-    <?php elseif (session()->getFlashdata('message_success')) : ?>
-        <span class="alert alert-success"><i class="fa-solid fa-circle-check"></i> <?= session()->getFlashdata('message_success') ?></span>
-    <?php elseif (session()->getFlashdata('message_warning')) : ?>
-        <span class="alert alert-warning"><i class="fa-solid fa-triangle-exclamation"></i> <?= session()->getFlashdata('message_warning') ?></span>
-    <?php endif; ?>
-</div>
+<?php if (session()->has('message')) : ?>
+<script src="/plugins/toastr/toastr.min.js"></script>
+<script>
+    $(document).ready(function() {
+        var message = '<?= session('message') ?>'
+        var type = '<?= session('type') ?>'
+
+        toastr.options = {
+            progressBar: true,
+            positionClass: 'toast-top-right',
+            showDuration: '300',
+            hideDuration: '1000',
+            timeOut: '5000',
+            extendedTimeOut: '1000'
+        }
+
+        if (type === 'success') toastr.success(message)
+        if (type === 'error') toastr.error(message)
+        if (type === 'info') toastr.info(message)
+        if (type === 'warning') toastr.warning(message)
+    })
+</script>
+<?php endif ?>
