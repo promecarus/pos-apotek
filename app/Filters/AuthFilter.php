@@ -25,10 +25,27 @@ class AuthFilter implements FilterInterface
      */
     public function before(RequestInterface $request, $arguments = null)
     {
-        if (is_null(session()->get('logged_in'))) {
+        $except = [
+            'auth/signup',
+            'auth/checkEmailUnique',
+            'auth/checkUsernameUnique',
+            'auth/register',
+            'auth/signin',
+            'auth/login',
+        ];
+
+        if (is_null(session()->get('logged_in')) && !in_array($request->uri->getPath(), $except)) {
             return redirect()
                 ->to(base_url('/auth/signin'))
-                ->with('message_error', 'Silakan login terlebih dahulu!');
+                ->with('message', 'Silakan login terlebih dahulu!')
+                ->with('type', 'error');
+        }
+
+        if (!is_null(session()->get('logged_in')) && in_array($request->uri->getPath(), $except)) {
+            return redirect()
+                ->back()
+                ->with('message', 'Anda sudah login.')
+                ->with('type', 'info');
         }
     }
 
@@ -46,10 +63,5 @@ class AuthFilter implements FilterInterface
      */
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
     {
-        if (!is_null(session()->get('logged_in'))) {
-            return redirect()
-                ->to(base_url())
-                ->with('message_warning', 'Anda sudah login.');
-        }
     }
 }

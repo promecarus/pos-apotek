@@ -30,27 +30,7 @@ class Filters extends BaseConfig
      * applied before and after every request.
      */
     public array $globals = [
-        'before' => [
-            'auth' => [
-                'except' => [
-                    'auth/signup',
-                    'auth/register',
-                    'auth/signin',
-                    'auth/login',
-                ]
-            ]
-        ],
-        'after' => [
-            'auth' => [
-                'except' => [
-                    'auth/signout',
-                    '/',
-                    'master/*',
-                    'transaksi/*',
-                    'report/*'
-                ]
-            ],
-        ],
+        "before" => ["auth"],
     ];
 
     /**
