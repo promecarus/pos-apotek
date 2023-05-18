@@ -1,20 +1,46 @@
-<?= $this->extend('app') ?>
+<?= $this->extend("app") ?>
 
-<?= $this->section('content') ?>
-<div class="flex justify-center items-center h-screen">
-    <div class="card shadow-lg p-6 w-96">
-        <h2 class="text-xl font-semibold mb-3">Sign In</h2>
-        <form method="post" action="/auth/login" class="form-control w-full mb-3">
-            <div class="input-group input-group-vertical mb-3">
-                <input class="input input-bordered" name="emailOrUsername" placeholder="Email or username" type="text" value="<?= old('emailOrUsername ') ?>">
-                <input class="input input-bordered" name="password" placeholder="Password" type="password">
-            </div>
-            <button class="btn w-full" type="submit">Submit</button>
-        </form>
-        <p class="text-center text-sm text-gray-500">
-            Belum terdaftar?
-            <a href="/auth/signup" class="link link-info link-hover">Sign Up</a>
-        </p>
+<?= $this->section("link") ?>
+<link rel="stylesheet" href="/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+<?= $this->endSection() ?>
+
+<?= $this->section("content") ?>
+
+<div class="login-box">
+    <div class="card card-outline card-primary">
+        <div class="card-header text-center">
+            <a class="h1"><b><?= $_ENV["app.concept"] ?></b><?= $_ENV["app.theme"] ?></a>
+        </div>
+        <div class="card-body">
+            <form id="form" action="/auth/login" method="post">
+                <div class="input-group mb-3">
+                    <input type="text" name="emailOrUsername" class="form-control" placeholder="Email atau username" value="<?= old("emailOrUsername") ?>">
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-envelope"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-group mb-3">
+                    <input type="password" name="password" class="form-control" placeholder="Password">
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-lock"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                    </div>
+                </div>
+            </form>
+            <p class="mb-0">
+                Belum terdaftar?
+                <a href="/auth/signup" class="text-center">Sign Up</a>
+            </p>
+        </div>
     </div>
 </div>
+<?= $this->include("component/formValidation") ?>
 <?= $this->endSection() ?>

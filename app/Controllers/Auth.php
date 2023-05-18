@@ -126,37 +126,60 @@ class Auth extends BaseController
 
     public function signin()
     {
-        return view('auth/signin', [
-            'title' => 'Sign In'
+        return view("auth/signin", [
+            "title" => "Sign In",
+            "bodyClass" => "hold-transition login-page",
+            "rules" => "{
+                emailOrUsername: {
+                    required: true,
+                    minlength: 2,
+                    maxlength: 255
+                },
+                password: {
+                    required: true
+                }
+            }",
+            "messages" => "{
+                emailOrUsername: {
+                    required: 'Email atau username tidak boleh kosong',
+                    minlength: 'Username minimal 2 karakter',
+                    maxlength: 'Email atau username maksimal 255 karakter'
+                },
+                password: {
+                    required: 'Password tidak boleh kosong'
+                }
+            }"
         ]);
     }
 
     public function login()
     {
         $userModel = new UserModel();
-        $emailOrUsername = $this->request->getVar('emailOrUsername');
+        $emailOrUsername = $this->request->getVar("emailOrUsername");
         $user = $userModel
-            ->where('email', $emailOrUsername)
-            ->orWhere('username', $emailOrUsername)
+            ->where("email", $emailOrUsername)
+            ->orWhere("username", $emailOrUsername)
             ->first();
 
-        if (!$user || !password_verify($this->request->getVar('password'), $user['password'])) {
+        if (!$user || !password_verify($this->request->getVar("password"), $user["password"])) {
             return redirect()
-                ->to(base_url('auth/signin'))
+                ->back()
                 ->withInput()
-                ->with('message_error', 'Login gagal. Silakan coba lagi!');
+                ->with("message", "Login gagal, silakan coba lagi!")
+                ->with("type", "error");
         }
 
         session()->set([
-            'nama' => $user['nama'],
-            'username' => $user['username'],
-            'role_id' => $user['role_id'],
-            'logged_in' => true
+            "nama" => $user["nama"],
+            "username" => $user["username"],
+            "role_id" => $user["role_id"],
+            "logged_in" => true
         ]);
 
         return redirect()
             ->to(base_url())
-            ->with('message_success', 'Selamat datang, ' . $user['nama'] . '.');
+            ->with("message", "Selamat datang, " . $user["nama"] . ".")
+            ->with("type", "success");
     }
 
     public function signout()
