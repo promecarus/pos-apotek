@@ -1,28 +1,57 @@
-<aside class="w-56 bg-base-100 rounded-br">
-    <div class="z-20 bg-opacity-100 backdrop-blur sticky top-0 items-center gap-2 p-3 lg:flex">
-        <?= $this->include('component/buttonapp') ?>
+<aside class="main-sidebar elevation-4 <?= (session()->get('theme') ? 'sidebar-dark-primary' : 'sidebar-light-primary') ?>">
+    <a href="<?= base_url() ?>" class="brand-link">
+        <img src="/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <span class="brand-text font-weight-light"><b><?= $_ENV["app.concept"] ?></b><?= $_ENV["app.theme"] ?></span></a>
+    <div class="sidebar">
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+                <img src="/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+            </div>
+            <div class="info"><a href="#"><?= session()->get("nama") ?></a>
+            </div>
+        </div>
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <li class="nav-item">
+                    <a href="<?= base_url() ?>" class="nav-link <?= uri_string() == '' ? 'active' : '' ?>"><i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>Dashboard</p>
+                    </a>
+                </li>
+                <li class="nav-item <?= explode("/", service('uri')->getPath())[0] == 'master' ? 'menu-open' : '' ?>"><a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-key"></i>
+                        <p>Master<i class="fas fa-angle-left right"></i></p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="<?= base_url('master/dosis') ?>" class="nav-link <?= uri_string() == 'master/dosis' ? 'active' : '' ?>"><i class="far fa-circle nav-icon"></i>
+                                <p>Dosis</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('master/obat') ?>" class="nav-link <?= uri_string() == 'master/obat' ? 'active' : '' ?>"><i class="far fa-circle nav-icon"></i>
+                                <p>Obat</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('master/pelanggan') ?>" class="nav-link <?= uri_string() == 'master/pelanggan' ? 'active' : '' ?>"><i class="far fa-circle nav-icon"></i>
+                                <p>Pelanggan</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item <?= explode("/", service('uri')->getPath())[0] == 'transaksi' ? 'menu-open' : '' ?>"><a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-table"></i>
+                        <p>Transaksi<i class="fas fa-angle-left right"></i></p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="<?= base_url('transaksi/stok') ?>" class="nav-link <?= uri_string() == 'transaksi/stok' ? 'active' : '' ?>"><i class="far fa-circle nav-icon"></i>
+                                <p>Stok</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
     </div>
-    <ul class="menu menu-compact bg-base-100 w-full p-3">
-        <li class="hover-bordered">
-            <a href="<?= base_url() ?>" class="<?= uri_string() == '' ? 'active' : '' ?>"><i class="fa-solid fa-gauge"></i> Dashboard</a>
-        </li>
-        <li class="menu-title"><span>Master</span></li>
-        <li class="hover-bordered">
-            <a href="<?= base_url('master/item1') ?>" class="<?= uri_string() == 'master/item1' ? 'active' : '' ?>"><i class="fa-solid fa-m"></i> Master Item 1</a>
-        </li>
-        <li class="hover-bordered">
-            <a href="<?= base_url('master/item2') ?>" class="<?= uri_string() == 'master/item2' ? 'active' : '' ?>"><i class="fa-solid fa-m"></i> Master Item 2</a>
-        </li>
-        <li class="hover-bordered">
-            <a href="<?= base_url('master/item3') ?>" class="<?= uri_string() == 'master/item3' ? 'active' : '' ?>"><i class="fa-solid fa-m"></i> Master Item 3</a>
-        </li>
-        <li class="menu-title"><span>Transaksi</span></li>
-        <li class="hover-bordered">
-            <a href="<?= base_url('transaksi/item1') ?>" class="<?= uri_string() == 'transaksi/item1' ? 'active' : '' ?>"><i class="fa-solid fa-t"></i> Transaksi 1</a>
-        </li>
-        <li class="menu-title"><span>Report</span></li>
-        <li class="hover-bordered">
-            <a href="<?= base_url('report/item1') ?>" class="<?= uri_string() == 'report/item1' ? 'active' : '' ?>"><i class="fa-solid fa-r"></i> Report</a>
-        </li>
-    </ul>
 </aside>
