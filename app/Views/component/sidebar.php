@@ -5,7 +5,7 @@
     <div class="sidebar">
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <img src="/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                <img src="/dist/img/avatar.jpg" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info"><a href="#"><?= session()->get("nama") ?></a>
             </div>
@@ -50,6 +50,18 @@
                             </a>
                         </li>
                     </ul>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="<?= base_url('transaksi/penjualan') ?>" class="nav-link <?= uri_string() == 'transaksi/penjualan' ? 'active' : '' ?>"><i class="far fa-circle nav-icon"></i>
+                                <p>Penjualan</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="<?= base_url('dashboard/pengaturan') ?>" class="nav-link <?= uri_string() == 'dashboard/pengaturan' ? 'active' : '' ?>"><i class="fas fa-cog nav-icon"></i>
+                        <p>Pengaturan</p>
+                    </a>
                 </li>
             </ul>
         </nav>

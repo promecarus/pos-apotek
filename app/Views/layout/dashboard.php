@@ -1,18 +1,28 @@
-<?= $this->extend('app') ?>
-
-<?= $this->section('content') ?>
-<div class="drawer drawer-mobile">
-    <input id="drawer" type="checkbox" class="drawer-toggle" />
-    <div class="drawer-content">
-        <?= $this->include('component/navbar') ?>
-        <div class="p-5">
-            <h1 class="text-3xl mb-5"><?= $title ?? 'Not Set' ?></h1>
-            <?= $this->renderSection('content') ?>
+<?= $this->extend("app") ?>
+<?= $this->section("link") ?>
+<link rel="stylesheet" href="/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+<?= $this->endSection() ?>
+<?= $this->section("content") ?>
+<div class="wrapper">
+    <?= $this->include("component/navbar") ?>
+    <?= $this->include("component/sidebar") ?>
+    <div class="content-wrapper">
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1 class="m-0"><?= $title ?></h1>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="drawer-side">
-        <label for="drawer" class="drawer-overlay"></label>
-        <?= $this->include('component/sidebar') ?>
+        <section class="content">
+            <div class="container-fluid">
+                <?= $this->renderSection("content") ?>
+            </div>
+        </section>
+        <?= $this->include("component/footer") ?>
     </div>
 </div>
+<script src="/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <?= $this->endSection() ?>
