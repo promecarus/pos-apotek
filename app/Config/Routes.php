@@ -11,8 +11,8 @@ $routes = Services::routes();
  * --------------------------------------------------------------------
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('Auth');
-$routes->setDefaultMethod('signin');
+$routes->setDefaultController('Dashboard');
+$routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
 // The Auto Routing (Legacy) is very dangerous. It is easy to create vulnerable apps
@@ -29,19 +29,26 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Dashboard::index');
+$routes->add('/', 'Dashboard::index');
+$routes->add('/dashboard/(:any)', 'Dashboard::$1');
 
-$routes->get('/auth/(:any)', 'Auth::$1');
-$routes->post('/auth/(:any)', 'Auth::$1');
+$routes->add('/auth/(:any)', 'Auth::$1');
 
-$routes->get('/master/(:any)', 'Master::$1');
-$routes->post('/master/(:any)', 'Master::$1');
+$routes->add('/master/dosis', 'Dosis::index');
+$routes->add('/master/dosis/(:any)(/(:any))?', 'Dosis::$1/$2');
 
-$routes->get('/transaksi/(:any)', 'Transaksi::$1');
-$routes->post('/transaksi/(:any)', 'Transaksi::$1');
+$routes->add('/master/obat', 'Obat::index');
+$routes->add('/master/obat/(:any)(/(:any))?', 'Obat::$1/$2');
 
-$routes->get('/report/(:any)', 'Report::$1');
-$routes->post('/report/(:any)', 'Report::$1');
+$routes->add('/master/pelanggan', 'Pelanggan::index');
+$routes->add('/master/pelanggan/(:any)(/(:any))?', 'Pelanggan::$1/$2');
+
+$routes->add('/transaksi/stok', 'Stok::index');
+$routes->add('/transaksi/stok/(:any)(/(:any))?', 'Stok::$1/$2');
+
+$routes->add('/transaksi/penjualan', 'Penjualan::index');
+$routes->add('/transaksi/penjualan/(:any)(/(:any))?', 'Penjualan::$1/$2');
+
 
 /*
  * --------------------------------------------------------------------
