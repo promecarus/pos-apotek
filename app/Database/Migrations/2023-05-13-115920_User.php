@@ -39,12 +39,10 @@ class User extends Migration
             ],
             'created_at' => [
                 'type' => 'DATETIME',
-                'null' => true,
                 'default' => date('Y-m-d H:i:s')
             ],
             'updated_at' => [
                 'type' => 'DATETIME',
-                'null' => true,
                 'default' => date('Y-m-d H:i:s')
             ],
             'deleted_at' => [
