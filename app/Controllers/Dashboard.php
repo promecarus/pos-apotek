@@ -40,6 +40,9 @@ class Dashboard extends BaseController
             ? session()->set('theme', false)
             : session()->set('theme', true);
 
-        return redirect()->back();
+        return redirect()
+            ->back()
+            ->with('message', 'Tema berhasil diubah')
+            ->with('type', 'success');
     }
 }
