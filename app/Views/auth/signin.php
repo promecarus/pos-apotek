@@ -5,7 +5,6 @@
 <?= $this->endSection() ?>
 
 <?= $this->section("content") ?>
-
 <div class="login-box">
     <div class="card card-outline card-primary">
         <div class="card-header text-center">
