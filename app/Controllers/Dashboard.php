@@ -11,6 +11,26 @@ class Dashboard extends BaseController
         return view('dashboard/index', [
             'title' => 'Dashboard',
             'bodyClass' => 'hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed',
+            'infos' => [
+                'Dosis' => [
+                    'bg' => 'info',
+                    'value' => (new \App\Models\DosisModel())->countAll(),
+                    'icon' => 'percentage',
+                    'link' => 'master/dosis'
+                ],
+                'Obat' => [
+                    'bg' => 'success',
+                    'value' => (new \App\Models\ObatModel())->countAll(),
+                    'icon' => 'pills',
+                    'link' => 'master/obat'
+                ],
+                'Pelanggan' => [
+                    'bg' => 'warning',
+                    'value' => (new \App\Models\PelangganModel())->countAll(),
+                    'icon' => 'users',
+                    'link' => 'master/pelanggan'
+                ],
+            ],
         ]);
     }
 

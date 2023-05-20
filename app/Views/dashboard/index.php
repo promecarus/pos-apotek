@@ -1,52 +1,20 @@
 <?= $this->extend('layout/dashboard') ?>
 
 <?= $this->section('content') ?>
-
-<div class="grid grid-cols-1 lg:grid-cols-4 gap-4 content-stretch">
-    <div class="card w-96 bg-primary text-primary-content shadow-xl block">
-        <div class="card-body">
-            <h2 class="card-title">Card title!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div class="card-actions justify-end">
-                <button class="btn">Buy Now</button>
+<div class="row">
+    <?php foreach ($infos as $key => $info) : ?>
+        <div class="col-lg-3 col-6">
+            <div class="small-box bg-<?= $info['bg'] ?>">
+                <div class="inner">
+                    <h3><?= $info['value'] ?></h3>
+                    <p><?= $key ?></p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-<?= $info['icon'] ?>"></i>
+                </div>
+                <a href="<?= $info['link'] ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
-    </div>
-    <div class="card w-96 bg-primary text-primary-content shadow-xl block">
-        <div class="card-body">
-            <h2 class="card-title">Card title!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div class="card-actions justify-end">
-                <button class="btn">Buy Now</button>
-            </div>
-        </div>
-    </div>
-    <div class="card w-96 bg-primary text-primary-content shadow-xl block">
-        <div class="card-body">
-            <h2 class="card-title">Card title!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div class="card-actions justify-end">
-                <button class="btn">Buy Now</button>
-            </div>
-        </div>
-    </div>
-    <div class="card w-96 bg-primary text-primary-content shadow-xl block">
-        <div class="card-body">
-            <h2 class="card-title">Card title!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div class="card-actions justify-end">
-                <button class="btn">Buy Now</button>
-            </div>
-        </div>
-    </div>
-    <div class="card w-96 bg-primary text-primary-content shadow-xl block">
-        <div class="card-body">
-            <h2 class="card-title">Card title!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div class="card-actions justify-end">
-                <button class="btn">Buy Now</button>
-            </div>
-        </div>
-    </div>
+    <?php endforeach ?>
 </div>
 <?= $this->endSection() ?>
