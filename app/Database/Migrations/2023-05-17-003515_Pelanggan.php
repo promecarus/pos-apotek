@@ -44,20 +44,6 @@ class Pelanggan extends Migration
         ]);
         $this->forge->addKey('id', true);
         $this->forge->createTable('pelanggan');
-        $this->db->table('pelanggan')->insertBatch([
-            [
-                'nama' => 'Muhammad',
-            ],
-            [
-                'nama' => 'Haikal',
-            ],
-            [
-                'nama' => 'Al',
-            ],
-            [
-                'nama' => 'Rasyid',
-            ]
-        ]);
     }
 
     public function down()

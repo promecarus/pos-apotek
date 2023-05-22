@@ -35,11 +35,6 @@ class Role extends Migration
         $this->forge->addKey('id', true);
         $this->forge->addUniqueKey('role');
         $this->forge->createTable('roles');
-        $this->db->table('roles')->insertBatch([
-            ['role' => 'Super Admin'],
-            ['role' => 'Administrator'],
-            ['role' => 'Kasir'],
-        ]);
     }
 
     public function down()

@@ -45,33 +45,6 @@ class Dosis extends Migration
         ]);
         $this->forge->addKey('id', true);
         $this->forge->createTable('dosis');
-        $this->db->table('dosis')->insertBatch([
-            [
-                'angka' => 250,
-                'satuan' => 'mg',
-                'keterangan' => 'tablet',
-            ],
-            [
-                'angka' => 500,
-                'satuan' => 'mg',
-                'keterangan' => 'tablet',
-            ],
-            [
-                'angka' => 100,
-                'satuan' => 'mg/ml',
-                'keterangan' => 'drop',
-            ],
-            [
-                'angka' => 125,
-                'satuan' => 'mg/5ml',
-                'keterangan' => 'sendok teh',
-            ],
-            [
-                'angka' => 250,
-                'satuan' => 'mg/5ml',
-                'keterangan' => 'sendok teh',
-            ],
-        ]);
     }
 
     public function down()

@@ -57,29 +57,6 @@ class User extends Migration
         ]);
         $this->forge->addForeignKey('role_id', 'roles', 'id');
         $this->forge->createTable('users');
-        $this->db->table('users')->insertBatch([
-            [
-                'email' => 'superadmin@gmail.com',
-                'username' => 'superadmin',
-                'password' => password_hash('123456', PASSWORD_DEFAULT),
-                'nama' => 'Super Admin',
-                'role_id' => 1,
-            ],
-            [
-                'email' => 'admin@gmail.com',
-                'username' => 'admin',
-                'password' => password_hash('123456', PASSWORD_DEFAULT),
-                'nama' => 'Admin',
-                'role_id' => 2,
-            ],
-            [
-                'email' => 'kasir@gmail.com',
-                'username' => 'kasir',
-                'password' => password_hash('123456', PASSWORD_DEFAULT),
-                'nama' => 'Kasir',
-                'role_id' => 3,
-            ],
-        ]);
     }
 
     public function down()
