@@ -98,10 +98,10 @@ class Auth extends BaseController
     public function register()
     {
         $userModel = new UserModel();
-        $email = $this->request->getVar("email");
+        $email = esc($this->request->getVar("email"));
         $username = $this->request->getVar("username");
         $password = $this->request->getVar("password");
-        $nama = $this->request->getVar("nama");
+        $nama = esc($this->request->getVar("nama"));
 
         if (empty($email) || empty($username) || empty($password) || empty($nama)) {
             return redirect()
@@ -171,7 +171,7 @@ class Auth extends BaseController
 
         session()->set([
             "nama" => $user["nama"],
-            "username" => $user["username"],
+            "username" => esc($user["username"]),
             "role_id" => $user["role_id"],
             "logged_in" => true
         ]);
