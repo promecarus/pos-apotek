@@ -4,9 +4,9 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class DosisModel extends Model
+class KemasanModel extends Model
 {
-    protected $table = 'dosis';
+    protected $table = 'kemasan';
     protected $primaryKey = 'id';
     protected $useAutoIncrement = true;
     protected $useSoftDeletes = true;
@@ -23,7 +23,7 @@ class DosisModel extends Model
     protected $updatedField = 'updated_at';
     protected $deletedField = 'deleted_at';
 
-    public function getDosis($id = false)
+    public function getKemasan($id = false)
     {
         if ($id == false) {
             return $this->findAll();

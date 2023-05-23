@@ -4,19 +4,19 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 
-class Dosis extends BaseController
+class Kemasan extends BaseController
 {
-    protected $dosisModel;
+    protected $kemasanModel;
 
     public function __construct()
     {
-        $this->dosisModel = new \App\Models\DosisModel();
+        $this->kemasanModel = new \App\Models\KemasanModel();
     }
 
     public function index()
     {
-        return view('master/dosis', [
-            'title' => 'Dosis',
+        return view('master/kemasan', [
+            'title' => 'Kemasan',
             'bodyClass' => 'hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed',
             'fields' => [
                 'id', 'angka', 'satuan', 'keterangan',
@@ -51,13 +51,13 @@ class Dosis extends BaseController
                     maxlength: "Keterangan maksimal 255 karakter"
                 }
             }',
-            'dataTable' => $this->dosisModel->getDosis(),
+            'dataTable' => $this->kemasanModel->getKemasan(),
         ]);
     }
 
     public function store()
     {
-        $this->dosisModel->insert([
+        $this->kemasanModel->insert([
             'angka' => $this->request->getVar('angka'),
             'satuan' => esc($this->request->getVar('satuan')),
             'keterangan' => esc($this->request->getVar('keterangan')),
@@ -71,7 +71,7 @@ class Dosis extends BaseController
 
     public function update($id)
     {
-        $this->dosisModel->update($id, [
+        $this->kemasanModel->update($id, [
             'angka' => $this->request->getVar('angka'),
             'satuan' => esc($this->request->getVar('satuan')),
             'keterangan' => esc($this->request->getVar('keterangan')),
@@ -85,7 +85,7 @@ class Dosis extends BaseController
 
     public function delete($id)
     {
-        $this->dosisModel->delete($id);
+        $this->kemasanModel->delete($id);
 
         return redirect()
             ->back()

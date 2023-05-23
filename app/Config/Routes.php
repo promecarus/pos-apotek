@@ -34,8 +34,8 @@ $routes->add('/dashboard/(:any)', 'Dashboard::$1');
 
 $routes->add('/auth/(:any)', 'Auth::$1');
 
-$routes->add('/master/dosis', 'Dosis::index');
-$routes->add('/master/dosis/(:any)(/(:any))?', 'Dosis::$1/$2');
+$routes->add('/master/kemasan', 'Kemasan::index');
+$routes->add('/master/kemasan/(:any)(/(:any))?', 'Kemasan::$1/$2');
 
 $routes->add('/master/obat', 'Obat::index');
 $routes->add('/master/obat/(:any)(/(:any))?', 'Obat::$1/$2');

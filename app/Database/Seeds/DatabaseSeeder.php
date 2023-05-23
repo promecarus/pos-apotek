@@ -38,7 +38,7 @@ class DatabaseSeeder extends Seeder
             ],
         ]);
 
-        $this->db->table('dosis')->insertBatch([
+        $this->db->table('kemasan')->insertBatch([
             [
                 'angka' => 250,
                 'satuan' => 'mg',
@@ -283,49 +283,49 @@ class DatabaseSeeder extends Seeder
         $this->db->table('stok')->insertBatch([
             [
                 'obat_id' => 1,
-                'dosis_id' => 1,
+                'kemasan_id' => 1,
                 'jumlah' => 100,
                 'kedarluwarsa' => '2021-05-20'
             ],
             [
                 'obat_id' => 1,
-                'dosis_id' => 2,
+                'kemasan_id' => 2,
                 'jumlah' => 100,
                 'kedarluwarsa' => '2021-05-20'
             ],
             [
                 'obat_id' => 2,
-                'dosis_id' => 1,
+                'kemasan_id' => 1,
                 'jumlah' => 100,
                 'kedarluwarsa' => '2021-05-20'
             ],
             [
                 'obat_id' => 2,
-                'dosis_id' => 2,
+                'kemasan_id' => 2,
                 'jumlah' => 100,
                 'kedarluwarsa' => '2021-05-20'
             ],
             [
                 'obat_id' => 3,
-                'dosis_id' => 1,
+                'kemasan_id' => 1,
                 'jumlah' => 100,
                 'kedarluwarsa' => '2021-05-20'
             ],
             [
                 'obat_id' => 3,
-                'dosis_id' => 2,
+                'kemasan_id' => 2,
                 'jumlah' => 100,
                 'kedarluwarsa' => '2021-05-20'
             ],
             [
                 'obat_id' => 4,
-                'dosis_id' => 1,
+                'kemasan_id' => 1,
                 'jumlah' => 100,
                 'kedarluwarsa' => '2021-05-20'
             ],
             [
                 'obat_id' => 4,
-                'dosis_id' => 2,
+                'kemasan_id' => 2,
                 'jumlah' => 100,
                 'kedarluwarsa' => '2021-05-20'
             ],

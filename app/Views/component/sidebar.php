@@ -23,8 +23,8 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="<?= base_url('master/dosis') ?>" class="nav-link <?= uri_string() == 'master/dosis' ? 'active' : '' ?>"><i class="far fa-circle nav-icon"></i>
-                                <p>Dosis</p>
+                            <a href="<?= base_url('master/kemasan') ?>" class="nav-link <?= uri_string() == 'master/kemasan' ? 'active' : '' ?>"><i class="far fa-circle nav-icon"></i>
+                                <p>Kemasan</p>
                             </a>
                         </li>
                         <li class="nav-item">

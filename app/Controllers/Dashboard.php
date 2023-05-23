@@ -12,11 +12,11 @@ class Dashboard extends BaseController
             'title' => 'Dashboard',
             'bodyClass' => 'hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed',
             'infos' => [
-                'Dosis' => [
+                'Kemasan' => [
                     'bg' => 'info',
-                    'value' => (new \App\Models\DosisModel())->countAll(),
-                    'icon' => 'percentage',
-                    'link' => 'master/dosis'
+                    'value' => (new \App\Models\KemasanModel())->countAll(),
+                    'icon' => 'cubes',
+                    'link' => 'master/kemasan'
                 ],
                 'Obat' => [
                     'bg' => 'success',
@@ -44,5 +44,13 @@ class Dashboard extends BaseController
             ->back()
             ->with('message', 'Tema berhasil diubah')
             ->with('type', 'success');
+    }
+
+    public function pengaturan()
+    {
+        return view('dashboard/pengaturan', [
+            'title' => 'Pengaturan',
+            'bodyClass' => 'hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed',
+        ]);
     }
 }
