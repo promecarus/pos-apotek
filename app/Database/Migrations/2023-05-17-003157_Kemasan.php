@@ -44,6 +44,7 @@ class Kemasan extends Migration
             ],
         ]);
         $this->forge->addKey('id', true);
+        $this->forge->addUniqueKey(['angka', 'satuan', 'keterangan']);
         $this->forge->createTable('kemasan');
     }
 

@@ -57,11 +57,19 @@ class Kemasan extends BaseController
 
     public function store()
     {
-        $this->kemasanModel->insert([
+        $data = [
             'angka' => $this->request->getVar('angka'),
             'satuan' => esc($this->request->getVar('satuan')),
             'keterangan' => esc($this->request->getVar('keterangan')),
-        ]);
+        ];
+
+        if ($this->kemasanModel->where($data)->first()) {
+            return redirect()
+                ->back()
+                ->with('message', 'Data sudah ada')
+                ->with('type', 'warning');
+        }
+        $this->kemasanModel->insert($data);
 
         return redirect()
             ->back()
