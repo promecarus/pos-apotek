@@ -45,23 +45,18 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="<?= base_url('transaksi/stok') ?>" class="nav-link <?= uri_string() == 'transaksi/stok' ? 'active' : '' ?>"><i class="far fa-circle nav-icon"></i>
-                                <p>Stok</p>
-                            </a>
-                        </li>
-                    </ul>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
                             <a href="<?= base_url('transaksi/penjualan') ?>" class="nav-link <?= uri_string() == 'transaksi/penjualan' ? 'active' : '' ?>"><i class="far fa-circle nav-icon"></i>
                                 <p>Penjualan</p>
                             </a>
                         </li>
                     </ul>
-                </li>
-                <li class="nav-item">
-                    <a href="<?= base_url('dashboard/pengaturan') ?>" class="nav-link <?= uri_string() == 'dashboard/pengaturan' ? 'active' : '' ?>"><i class="fas fa-cog nav-icon"></i>
-                        <p>Pengaturan</p>
-                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="<?= base_url('transaksi/stok') ?>" class="nav-link <?= uri_string() == 'transaksi/stok' ? 'active' : '' ?>"><i class="far fa-circle nav-icon"></i>
+                                <p>Stok</p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </nav>

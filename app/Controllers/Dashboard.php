@@ -30,6 +30,12 @@ class Dashboard extends BaseController
                     'icon' => 'users',
                     'link' => 'master/pelanggan'
                 ],
+                'Stok' => [
+                    'bg' => 'danger',
+                    'value' => (new \App\Models\StokModel())->countAll(),
+                    'icon' => 'boxes',
+                    'link' => 'transaksi/stok'
+                ],
             ],
         ]);
     }
@@ -44,13 +50,5 @@ class Dashboard extends BaseController
             ->back()
             ->with('message', 'Tema berhasil diubah')
             ->with('type', 'success');
-    }
-
-    public function pengaturan()
-    {
-        return view('dashboard/pengaturan', [
-            'title' => 'Pengaturan',
-            'bodyClass' => 'hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed',
-        ]);
     }
 }
