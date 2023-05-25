@@ -16,7 +16,7 @@ class Obat extends BaseController
     public function index()
     {
         return view('master/obat', [
-        'title' => 'Obat',
+            'title' => 'Obat',
             'bodyClass' => 'hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed',
             'fields' => [
                 'id', 'nama', 'keterangan',
