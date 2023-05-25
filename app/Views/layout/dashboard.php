@@ -45,7 +45,7 @@
 <script src="/plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 <script src="/plugins/select2/js/select2.full.min.js"></script>
-<script src="/plugins/moment/moment-with-locales.min.js"></script>
+<script src="/plugins/moment/moment.min.js"></script>
 <script src="/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
 <script src="/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <?= $this->endSection() ?>

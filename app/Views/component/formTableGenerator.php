@@ -44,7 +44,6 @@
         })
 
         $('#kedarluwarsa').datetimepicker({
-            locale: 'id',
             format: 'll',
         })
 
