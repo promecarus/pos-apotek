@@ -40,220 +40,111 @@ class DatabaseSeeder extends Seeder
 
         $this->db->table('kemasan')->insertBatch([
             [
-                'angka' => 250,
-                'satuan' => 'mg',
-                'keterangan' => 'tablet',
+                'angka' => 100,
+                'satuan' => 'tablet',
+                'keterangan' => 'kotak',
             ],
             [
-                'angka' => 500,
-                'satuan' => 'mg',
-                'keterangan' => 'tablet',
+                'angka' => 60,
+                'satuan' => 'ml',
+                'keterangan' => 'botol',
+            ],
+            [
+                'angka' => 30,
+                'satuan' => 'kapsul',
+                'keterangan' => 'kotak',
+            ],
+            [
+                'angka' => 30,
+                'satuan' => 'tablet',
+                'keterangan' => 'kotak',
             ],
             [
                 'angka' => 100,
-                'satuan' => 'mg/ml',
-                'keterangan' => 'drop',
+                'satuan' => 'tablet',
+                'keterangan' => 'botol',
             ],
             [
-                'angka' => 125,
-                'satuan' => 'mg/5ml',
-                'keterangan' => 'sendok teh',
+                'angka' => 10,
+                'satuan' => 'tabung @ 5 gram',
+                'keterangan' => 'kotak',
             ],
             [
-                'angka' => 250,
-                'satuan' => 'mg/5ml',
-                'keterangan' => 'sendok teh',
+                'angka' => 10,
+                'satuan' => 'botol kecil',
+                'keterangan' => 'kotak',
             ],
+            [
+                'angka' => 50,
+                'satuan' => 'kapsul',
+                'keterangan' => 'kotak',
+            ]
         ]);
 
         $this->db->table('obat')->insertBatch([
             [
-                'nama' => 'Amoxilin',
-                'keterangan' => 'Untuk mengobati infeksi bakteri',
+                'nama' => 'Antacid',
+                'keterangan' => 'Untuk mengobati sakit maag',
             ],
             [
-                'nama' => 'Asam Mefenamat',
-                'keterangan' => 'Untuk mengobati nyeri ringan hingga sedang',
+                'nama' => 'Antacid Suspension',
+                'keterangan' => 'Untuk mengobati sakit maag',
             ],
             [
-                'nama' => 'Asam Traneksamat',
-                'keterangan' => 'Untuk mengobati pendarahan hebat',
+                'nama' => 'Cimetidine 200 mg',
+                'keterangan' => 'Untuk mengobati sakit maag',
             ],
             [
-                'nama' => 'Aspirin',
-                'keterangan' => 'Untuk mengobati nyeri ringan hingga sedang',
+                'nama' => 'Omeprazole 20 mg',
+                'keterangan' => 'Untuk mengobati sakit maag',
             ],
             [
-                'nama' => 'Azithromycin',
-                'keterangan' => 'Untuk mengobati infeksi bakteri',
+                'nama' => 'Ranitidine 150 mg',
+                'keterangan' => 'Untuk mengobati sakit maag',
             ],
             [
-                'nama' => 'Bactroban',
-                'keterangan' => 'Untuk mengobati infeksi bakteri',
-            ],
-            [
-                'nama' => 'Baclofen',
-                'keterangan' => 'Untuk mengobati nyeri otot',
-            ],
-            [
-                'nama' => 'Beclomethasone',
-                'keterangan' => 'Untuk mengobati asma',
-            ],
-            [
-                'nama' => 'Benadryl',
+                'nama' => 'Cetirizine 10 mg',
                 'keterangan' => 'Untuk mengobati alergi',
             ],
             [
-                'nama' => 'Betadine',
-                'keterangan' => 'Untuk antiseptik',
+                'nama' => 'Cetirizine Syrup',
+                'keterangan' => 'Untuk mengobati alergi',
             ],
             [
-                'nama' => 'Bisolvon',
-                'keterangan' => 'Untuk mengobati batuk',
-            ],
-            [
-                'nama' => 'Bisoprolol',
-                'keterangan' => 'Untuk mengobati hipertensi',
-            ],
-            [
-                'nama' => 'Bodrex',
-                'keterangan' => 'Untuk mengobati nyeri ringan hingga sedang',
-            ],
-            [
-                'nama' => 'Bromhexine',
-                'keterangan' => 'Untuk mengobati batuk',
-            ],
-            [
-                'nama' => 'Budesonide',
-                'keterangan' => 'Untuk mengobati asma',
-            ],
-            [
-                'nama' => 'Bupropion',
-                'keterangan' => 'Untuk mengobati depresi',
-            ],
-            [
-                'nama' => 'Buspirone',
+                'nama' => 'Alprazolam 0.5 mg',
                 'keterangan' => 'Untuk mengobati kecemasan',
             ],
             [
-                'nama' => 'Captopril',
-                'keterangan' => 'Untuk mengobati hipertensi',
-            ],
-            [
-                'nama' => 'Carvedilol',
-                'keterangan' => 'Untuk mengobati hipertensi',
-            ],
-            [
-                'nama' => 'Cataflam',
-                'keterangan' => 'Untuk mengobati nyeri ringan hingga sedang',
-            ],
-            [
-                'nama' => 'Cefadroxil',
-                'keterangan' => 'Untuk mengobati infeksi bakteri',
-            ],
-            [
-                'nama' => 'Cefixime',
-                'keterangan' => 'Untuk mengobati infeksi bakteri',
-            ],
-            [
-                'nama' => 'Cefspan',
-                'keterangan' => 'Untuk mengobati infeksi bakteri',
-            ],
-            [
-                'nama' => 'Celecoxib',
-                'keterangan' => 'Untuk mengobati nyeri ringan hingga sedang',
-            ],
-            [
-                'nama' => 'Cetirizine',
-                'keterangan' => 'Untuk mengobati alergi',
-            ],
-            [
-                'nama' => 'Chlorthalidone',
-                'keterangan' => 'Untuk mengobati hipertensi',
-            ],
-            [
-                'nama' => 'Ciprofloxacin',
-                'keterangan' => 'Untuk mengobati infeksi bakteri',
-            ],
-            [
-                'nama' => 'Citalopram',
-                'keterangan' => 'Untuk mengobati depresi',
-            ],
-            [
-                'nama' => 'Clarithromycin',
-                'keterangan' => 'Untuk mengobati infeksi bakteri',
-            ],
-            [
-                'nama' => 'Clonazepam',
+                'nama' => 'Alprazolam 1 mg',
                 'keterangan' => 'Untuk mengobati kecemasan',
             ],
             [
-                'nama' => 'Clopidogrel',
-                'keterangan' => 'Untuk mengobati penyakit jantung',
-            ],
-            [
-                'nama' => 'Codeine',
-                'keterangan' => 'Untuk mengobati nyeri ringan hingga sedang',
-            ],
-            [
-                'nama' => 'Cyclobenzaprine',
-                'keterangan' => 'Untuk mengobati nyeri otot',
-            ],
-            [
-                'nama' => 'Dexamethasone',
-                'keterangan' => 'Untuk mengobati peradangan',
-            ],
-            [
-                'nama' => 'Dextamine',
-                'keterangan' => 'Untuk mengobati alergi',
-            ],
-            [
-                'nama' => 'Dextro',
-                'keterangan' => 'Untuk mengobati depresi',
-            ],
-            [
-                'nama' => 'Diazepam',
+                'nama' => 'Diazepam 2 mg',
                 'keterangan' => 'Untuk mengobati kecemasan',
             ],
             [
-                'nama' => 'Diclofenac',
-                'keterangan' => 'Untuk mengobati nyeri ringan hingga sedang',
+                'nama' => 'Phenobarbital 30 mg tablet',
+                'keterangan' => 'Untuk mengobati kecemasan',
             ],
             [
-                'nama' => 'Dicloxacillin',
-                'keterangan' => 'Untuk mengobati infeksi bakteri',
+                'nama' => 'Gentamycin 0.1%',
+                'keterangan' => 'Untuk mengobati infeksi kulit',
             ],
             [
-                'nama' => 'Diltiazem',
-                'keterangan' => 'Untuk mengobati hipertensi',
+                'nama' => 'Amoxicillin 500 mg',
+                'keterangan' => 'Untuk mengobati infeksi saluran pernafasan, saluran kemih, dan infeksi kuping',
             ],
             [
-                'nama' => 'Diphenhydramine',
-                'keterangan' => 'Untuk mengobati alergi',
+                'nama' => 'Meropenem Injeksi Kering 1 gr',
+                'keterangan' => 'Untuk mengobati infeksi saluran pernafasan, saluran kemih, dan infeksi kuping',
             ],
             [
-                'nama' => 'Domeperidone',
-                'keterangan' => 'Untuk mengobati mual dan muntah',
+                'nama' => 'Cefadroxil 500 mg',
+                'keterangan' => 'Untuk mengobati infeksi saluran kemih, kulit, pernafasan, dan tenggorokan',
             ],
             [
-                'nama' => 'Donepezil',
-                'keterangan' => 'Untuk mengobati Alzheimer',
-            ],
-            [
-                'nama' => 'Doxycycline',
-                'keterangan' => 'Untuk mengobati infeksi bakteri',
-            ],
-            [
-                'nama' => 'Duloxetine',
-                'keterangan' => 'Untuk mengobati depresi',
-            ],
-            [
-                'nama' => 'Paracetamol',
-                'keterangan' => 'Untuk mengobati nyeri ringan hingga sedang',
-            ],
-            [
-                'nama' => 'Promag',
-                'keterangan' => 'Untuk mengobati maag',
+                'nama' => 'Cefixime 100 mg',
+                'keterangan' => 'Untuk mengobati infeksi saluran kemih, kulit, pernafasan, dan tenggorokan',
             ],
         ]);
 
@@ -277,64 +168,106 @@ class DatabaseSeeder extends Seeder
                 'nama' => 'Rasyid',
                 'alamat' => 'Jl. Alamat',
                 'telepon' => '081234567893'
-            ]
+            ],
         ]);
 
         $this->db->table('stok')->insertBatch([
             [
                 'obat_id' => 1,
                 'kemasan_id' => 1,
-                'jumlah' => 100,
-                'kedarluwarsa' => '2021-05-20'
-            ],
-            [
-                'obat_id' => 1,
-                'kemasan_id' => 2,
-                'jumlah' => 100,
-                'kedarluwarsa' => '2021-05-20'
-            ],
-            [
-                'obat_id' => 2,
-                'kemasan_id' => 1,
-                'jumlah' => 100,
-                'kedarluwarsa' => '2021-05-20'
+                'jumlah' => 1,
+                'kedarluwarsa' => '2024-01-02'
             ],
             [
                 'obat_id' => 2,
                 'kemasan_id' => 2,
-                'jumlah' => 100,
-                'kedarluwarsa' => '2021-05-20'
+                'jumlah' => 2,
+                'kedarluwarsa' => '2024-02-03'
             ],
             [
                 'obat_id' => 3,
                 'kemasan_id' => 1,
-                'jumlah' => 100,
-                'kedarluwarsa' => '2021-05-20'
-            ],
-            [
-                'obat_id' => 3,
-                'kemasan_id' => 2,
-                'jumlah' => 100,
-                'kedarluwarsa' => '2021-05-20'
+                'jumlah' => 3,
+                'kedarluwarsa' => '2024-03-04'
             ],
             [
                 'obat_id' => 4,
+                'kemasan_id' => 3,
+                'jumlah' => 4,
+                'kedarluwarsa' => '2024-04-05'
+            ],
+            [
+                'obat_id' => 5,
+                'kemasan_id' => 4,
+                'jumlah' => 5,
+                'kedarluwarsa' => '2024-05-06'
+            ],
+            [
+                'obat_id' => 6,
+                'kemasan_id' => 4,
+                'jumlah' => 6,
+                'kedarluwarsa' => '2024-06-07'
+            ],
+            [
+                'obat_id' => 7,
+                'kemasan_id' => 2,
+                'jumlah' => 7,
+                'kedarluwarsa' => '2024-07-08'
+            ],
+            [
+                'obat_id' => 8,
                 'kemasan_id' => 1,
-                'jumlah' => 100,
-                'kedarluwarsa' => '2021-05-20'
+                'jumlah' => 8,
+                'kedarluwarsa' => '2024-08-09'
             ],
             [
-                'obat_id' => 4,
-                'kemasan_id' => 2,
-                'jumlah' => 100,
-                'kedarluwarsa' => '2021-05-20'
+                'obat_id' => 9,
+                'kemasan_id' => 1,
+                'jumlah' => 9,
+                'kedarluwarsa' => '2024-09-10'
             ],
-        ]);
-
-        $this->db->table('pengaturan')->insert([
-            'nama' => 'Apotek',
-            'alamat' => 'Jl. Apotek',
-            'no_telp' => '081234567890',
+            [
+                'obat_id' => 10,
+                'kemasan_id' => 1,
+                'jumlah' => 10,
+                'kedarluwarsa' => '2024-10-11'
+            ],
+            [
+                'obat_id' => 11,
+                'kemasan_id' => 5,
+                'jumlah' => 11,
+                'kedarluwarsa' => '2024-11-12'
+            ],
+            [
+                'obat_id' => 12,
+                'kemasan_id' => 6,
+                'jumlah' => 12,
+                'kedarluwarsa' => '2024-12-13'
+            ],
+            [
+                'obat_id' => 13,
+                'kemasan_id' => 1,
+                'jumlah' => 13,
+                'kedarluwarsa' => '2024-12-14'
+            ],
+            [
+                'obat_id' => 14,
+                'kemasan_id' => 7,
+                'jumlah' => 14,
+                'kedarluwarsa' => '2024-12-15'
+            ],
+            [
+                'obat_id' => 15,
+                'kemasan_id' => 8,
+                'jumlah' => 15,
+                'kedarluwarsa' => '2024-12-16'
+            ],
+            [
+                'obat_id' => 16,
+                'kemasan_id' => 3,
+                'jumlah' => 16,
+                'kedarluwarsa' => '2024-12-17'
+            ],
         ]);
     }
 }
