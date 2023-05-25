@@ -49,8 +49,8 @@ class Stok extends BaseController
                     number: "Jumlah harus berupa angka",
                     min: "Jumlah minimal 1"
                 },
-                kedaluwarsa: {
-                    required: "Kedaluwarsa tidak boleh kosong"
+                kedarluwarsa: {
+                    required: "Kedarluwarsa tidak boleh kosong"
                 }
             }',
             'dataTable' => $this->stokModel->getStok(),

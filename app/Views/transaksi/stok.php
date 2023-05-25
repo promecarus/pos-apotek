@@ -21,13 +21,8 @@
 <div class="input-group mb-3">
     <input id="jumlah" type="number" name="jumlah" class="form-control" placeholder="Jumlah">
 </div>
-<div class="form-group">
-    <label>Kedarluwarsa</label>
-    <div id="kedarluwarsa" class="input-group date" data-target-input="nearest">
-        <input name="kedarluwarsa" type="text" class="form-control datetimepicker-input" data-target="#kedarluwarsa" placeholder="Kedarluwarsa" />
-        <div class="input-group-append" data-target="#kedarluwarsa" data-toggle="datetimepicker">
-            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-        </div>
-    </div>
+<label for="kedarluwarsa">Kedarluwarsa</label>
+<div class="input-group mb-3">
+    <input id="kedarluwarsa" type="text" name="kedarluwarsa" class="form-control" placeholder="Kedarluwarsa" data-toggle="datetimepicker" />
 </div>
 <?= $this->endSection() ?>
