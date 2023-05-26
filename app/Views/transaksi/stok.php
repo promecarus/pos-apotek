@@ -17,6 +17,14 @@
         <?php endforeach; ?>
     </select>
 </div>
+<label for="beli">Beli</label>
+<div class="input-group mb-3">
+    <input id="beli" type="number" name="beli" class="form-control" placeholder="Beli">
+</div>
+<label for="jual">Jual</label>
+<div class="input-group mb-3">
+    <input id="jual" type="number" name="jual" class="form-control" placeholder="Jual">
+</div>
 <label for="jumlah">Jumlah</label>
 <div class="input-group mb-3">
     <input id="jumlah" type="number" name="jumlah" class="form-control" placeholder="Jumlah">

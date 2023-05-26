@@ -16,6 +16,8 @@ class StokModel extends Model
         'kemasan_id',
         'jumlah',
         'kedarluwarsa',
+        'beli',
+        'jual',
     ];
 
     protected $useTimestamps = true;
@@ -38,6 +40,8 @@ class StokModel extends Model
                     kemasan.angka,
                     kemasan.satuan
                 ) as kemasan,
+                beli,
+                jual,
                 jumlah,
                 kedarluwarsa
             ')

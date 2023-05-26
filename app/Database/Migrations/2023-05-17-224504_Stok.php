@@ -34,6 +34,16 @@ class Stok extends Migration
                 'type' => 'DATE',
                 'null' => true
             ],
+            'beli' => [
+                'type' => 'INT',
+                'constraint' => 11,
+                'unsigned' => true,
+            ],
+            'jual' => [
+                'type' => 'INT',
+                'constraint' => 11,
+                'unsigned' => true,
+            ],
             'created_at' => [
                 'type' => 'DATETIME',
                 'default' => date('Y-m-d H:i:s')

@@ -176,97 +176,129 @@ class DatabaseSeeder extends Seeder
                 'obat_id' => 1,
                 'kemasan_id' => 1,
                 'jumlah' => 1,
-                'kedarluwarsa' => '2024-01-02'
+                'kedarluwarsa' => '2024-01-02',
+                'beli' => 10000,
+                'jual' => 15000,
             ],
             [
                 'obat_id' => 2,
                 'kemasan_id' => 2,
                 'jumlah' => 2,
-                'kedarluwarsa' => '2024-02-03'
+                'kedarluwarsa' => '2024-02-03',
+                'beli' => 20000,
+                'jual' => 25000,
             ],
             [
                 'obat_id' => 3,
                 'kemasan_id' => 1,
                 'jumlah' => 3,
-                'kedarluwarsa' => '2024-03-04'
+                'kedarluwarsa' => '2024-03-04',
+                'beli' => 30000,
+                'jual' => 35000,
             ],
             [
                 'obat_id' => 4,
                 'kemasan_id' => 3,
                 'jumlah' => 4,
-                'kedarluwarsa' => '2024-04-05'
+                'kedarluwarsa' => '2024-04-05',
+                'beli' => 40000,
+                'jual' => 45000,
             ],
             [
                 'obat_id' => 5,
                 'kemasan_id' => 4,
                 'jumlah' => 5,
-                'kedarluwarsa' => '2024-05-06'
+                'kedarluwarsa' => '2024-05-06',
+                'beli' => 50000,
+                'jual' => 55000,
             ],
             [
                 'obat_id' => 6,
                 'kemasan_id' => 4,
                 'jumlah' => 6,
-                'kedarluwarsa' => '2024-06-07'
+                'kedarluwarsa' => '2024-06-07',
+                'beli' => 60000,
+                'jual' => 65000,
             ],
             [
                 'obat_id' => 7,
                 'kemasan_id' => 2,
                 'jumlah' => 7,
-                'kedarluwarsa' => '2024-07-08'
+                'kedarluwarsa' => '2024-07-08',
+                'beli' => 70000,
+                'jual' => 75000,
             ],
             [
                 'obat_id' => 8,
                 'kemasan_id' => 1,
                 'jumlah' => 8,
-                'kedarluwarsa' => '2024-08-09'
+                'kedarluwarsa' => '2024-08-09',
+                'beli' => 80000,
+                'jual' => 85000,
             ],
             [
                 'obat_id' => 9,
                 'kemasan_id' => 1,
                 'jumlah' => 9,
-                'kedarluwarsa' => '2024-09-10'
+                'kedarluwarsa' => '2024-09-10',
+                'beli' => 90000,
+                'jual' => 95000,
             ],
             [
                 'obat_id' => 10,
                 'kemasan_id' => 1,
                 'jumlah' => 10,
-                'kedarluwarsa' => '2024-10-11'
+                'kedarluwarsa' => '2024-10-11',
+                'beli' => 100000,
+                'jual' => 105000,
             ],
             [
                 'obat_id' => 11,
                 'kemasan_id' => 5,
                 'jumlah' => 11,
-                'kedarluwarsa' => '2024-11-12'
+                'kedarluwarsa' => '2024-11-12',
+                'beli' => 110000,
+                'jual' => 115000,
             ],
             [
                 'obat_id' => 12,
                 'kemasan_id' => 6,
                 'jumlah' => 12,
-                'kedarluwarsa' => '2024-12-13'
+                'kedarluwarsa' => '2024-12-13',
+                'beli' => 120000,
+                'jual' => 125000,
             ],
             [
                 'obat_id' => 13,
                 'kemasan_id' => 1,
                 'jumlah' => 13,
-                'kedarluwarsa' => '2024-12-14'
+                'kedarluwarsa' => '2024-12-14',
+                'beli' => 130000,
+                'jual' => 135000,
             ],
             [
                 'obat_id' => 14,
                 'kemasan_id' => 7,
                 'jumlah' => 14,
-                'kedarluwarsa' => '2024-12-15'
+                'kedarluwarsa' => '2024-12-15',
+                'beli' => 140000,
+                'jual' => 145000,
             ],
             [
                 'obat_id' => 15,
                 'kemasan_id' => 8,
                 'jumlah' => 15,
-                'kedarluwarsa' => '2024-12-16'
+                'kedarluwarsa' => '2024-12-16',
+                'beli' => 150000,
+                'jual' => 155000,
             ],
             [
                 'obat_id' => 16,
                 'kemasan_id' => 3,
                 'jumlah' => 16,
-                'kedarluwarsa' => '2024-12-17'
+                'kedarluwarsa' => '2024-12-17',
+                'beli' => 160000,
+                'jual' => 165000,
             ],
         ]);
     }
