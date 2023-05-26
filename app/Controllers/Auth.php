@@ -95,7 +95,7 @@ class Auth extends BaseController
         );
     }
 
-    public function register()
+    public function signupProcess()
     {
         $userModel = new UserModel();
         $email = esc($this->request->getVar("email"));
@@ -120,7 +120,7 @@ class Auth extends BaseController
 
         return redirect()
             ->to(base_url("auth/signin"))
-            ->with("message", "Registrasi berhasil, silakan login!")
+            ->with("message", "Sign up berhasil, silakan sign in!")
             ->with("type", "success");
     }
 
@@ -152,7 +152,7 @@ class Auth extends BaseController
         ]);
     }
 
-    public function login()
+    public function signinProcess()
     {
         $userModel = new UserModel();
         $emailOrUsername = $this->request->getVar("emailOrUsername");
@@ -165,7 +165,7 @@ class Auth extends BaseController
             return redirect()
                 ->back()
                 ->withInput()
-                ->with("message", "Login gagal, silakan coba lagi!")
+                ->with("message", "Sign in gagal, silakan coba lagi!")
                 ->with("type", "error");
         }
 
@@ -173,7 +173,7 @@ class Auth extends BaseController
             "nama" => $user["nama"],
             "username" => esc($user["username"]),
             "role_id" => $user["role_id"],
-            "logged_in" => true
+            "signed_in" => true
         ]);
 
         return redirect()
@@ -184,10 +184,10 @@ class Auth extends BaseController
 
     public function signout()
     {
-        session()->remove(["nama", "username", "role_id", "logged_in"]);
+        session()->remove(["nama", "username", "role_id", "signed_in"]);
         return redirect()
             ->to(base_url("auth/signin"))
-            ->with("message", "Logout berhasil, sampai jumpa lagi.")
+            ->with("message", "Sign out berhasil, sampai jumpa lagi.")
             ->with("type", "success");
     }
 }

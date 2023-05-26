@@ -29,22 +29,22 @@ class AuthFilter implements FilterInterface
             'auth/signup',
             'auth/checkEmailUnique',
             'auth/checkUsernameUnique',
-            'auth/register',
+            'auth/signupProcess',
             'auth/signin',
-            'auth/login',
+            'auth/signinProcess',
         ];
 
-        if (is_null(session()->get('logged_in')) && !in_array($request->uri->getPath(), $except)) {
+        if (is_null(session()->get('signed_in')) && !in_array($request->uri->getPath(), $except)) {
             return redirect()
                 ->to(base_url('/auth/signin'))
-                ->with('message', 'Silakan login terlebih dahulu!')
+                ->with('message', 'Silakan sign in terlebih dahulu!')
                 ->with('type', 'error');
         }
 
-        if (!is_null(session()->get('logged_in')) && in_array($request->uri->getPath(), $except)) {
+        if (!is_null(session()->get('signed_in')) && in_array($request->uri->getPath(), $except)) {
             return redirect()
                 ->back()
-                ->with('message', 'Anda sudah login.')
+                ->with('message', 'Anda sudah sign in.')
                 ->with('type', 'info');
         }
     }

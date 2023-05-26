@@ -63,6 +63,11 @@
                         </li>
                     </ul>
                 </li>
+                <li class="nav-item">
+                    <a href="<?= base_url("auth/signout") ?>" class="nav-link"><i class="nav-icon fas fa-sign-out-alt"></i>
+                        <p>Sign Out</p>
+                    </a>
+                </li>
             </ul>
         </nav>
     </div>

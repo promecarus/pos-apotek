@@ -11,7 +11,7 @@
             <a class="h1"><b><?= $_ENV["app.concept"] ?></b><?= $_ENV["app.theme"] ?></a>
         </div>
         <div class="card-body">
-            <form id="form" action="/auth/register" method="post">
+            <form id="form" action="/auth/signupProcess" method="post">
                 <div class="input-group mb-3">
                     <input id="email" type="email" name="email" class="form-control" placeholder="Email" value="<?= old('email') ?>">
                     <div class="input-group-append">
