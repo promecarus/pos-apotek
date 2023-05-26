@@ -1,6 +1,6 @@
 <script>
     let data = <?= json_encode($dataTable) ?>,
-        hiddenColumns = ['id', 'obat_id', 'kemasan_id', 'created_at', 'updated_at', 'deleted_at'],
+        hiddenColumns = ['id', 'role_id', 'obat_id', 'kemasan_id', 'created_at', 'updated_at', 'deleted_at'],
         type = "<?= explode("/", uri_string())[0] ?>"
 
     function storeData() {

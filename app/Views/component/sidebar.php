@@ -37,6 +37,11 @@
                                 <p>Pelanggan</p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('master/user') ?>" class="nav-link <?= uri_string() == 'master/user' ? 'active' : '' ?>"><i class="far fa-circle nav-icon"></i>
+                                <p>User</p>
+                            </a>
+                        </li>
                     </ul>
                 </li>
                 <li class="nav-item <?= explode("/", service('uri')->getPath())[0] == 'transaksi' ? 'menu-open' : '' ?>"><a href="#" class="nav-link">

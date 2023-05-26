@@ -19,9 +19,11 @@
                     </div>
                     <?= $this->renderSection("content") ?>
                     <div class="row">
+                        <?php if (uri_string() != 'master/user') : ?>
                         <div class="col">
                             <button class="btn btn-primary btn-block" onclick="storeData()">Store</button>
                         </div>
+                        <?php endif; ?>
                         <div class="col">
                             <button class="btn btn-warning btn-block" onclick="updateData()">Update</button>
                         </div>

@@ -43,6 +43,9 @@ $routes->add('/master/obat/(:any)(/(:any))?', 'Obat::$1/$2');
 $routes->add('/master/pelanggan', 'Pelanggan::index');
 $routes->add('/master/pelanggan/(:any)(/(:any))?', 'Pelanggan::$1/$2');
 
+$routes->add('/master/user', 'User::index');
+$routes->add('/master/user/(:any)(/(:any))?', 'User::$1/$2');
+
 $routes->add('/transaksi/stok', 'Stok::index');
 $routes->add('/transaksi/stok/(:any)(/(:any))?', 'Stok::$1/$2');
 

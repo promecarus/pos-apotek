@@ -30,6 +30,12 @@ class Dashboard extends BaseController
                     'icon' => 'users',
                     'link' => 'master/pelanggan'
                 ],
+                'User' => [
+                    'bg' => 'primary',
+                    'value' => (new \App\Models\UserModel())->countAll(),
+                    'icon' => 'user',
+                    'link' => 'master/user'
+                ],
                 'Stok' => [
                     'bg' => 'danger',
                     'value' => (new \App\Models\StokModel())->countAll(),

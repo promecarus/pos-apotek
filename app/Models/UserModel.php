@@ -27,9 +27,20 @@ class UserModel extends Model
 
     public function getUser($id = false)
     {
+        $user = $this
+            ->select('
+                users.id,
+                role_id,
+                email,
+                username,
+                nama,
+                roles.role
+            ')
+            ->join('roles', 'users.role_id = roles.id');
+
         if ($id == false) {
-            return $this->findAll();
+            return $user->findAll();
         }
-        return $this->find($id);
+        return $user->find($id);
     }
 }
