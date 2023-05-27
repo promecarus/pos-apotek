@@ -34,18 +34,49 @@ class AuthFilter implements FilterInterface
             'auth/signinProcess',
         ];
 
-        if (is_null(session()->get('signed_in')) && !in_array($request->uri->getPath(), $except)) {
+        $path = $request->uri->getPath();
+
+        if (is_null(session()->get('signed_in')) && !in_array($path, $except)) {
             return redirect()
                 ->to(base_url('/auth/signin'))
                 ->with('message', 'Silakan sign in terlebih dahulu!')
                 ->with('type', 'error');
         }
 
-        if (!is_null(session()->get('signed_in')) && in_array($request->uri->getPath(), $except)) {
+        if (!is_null(session()->get('signed_in')) && in_array($path, $except)) {
             return redirect()
                 ->back()
                 ->with('message', 'Anda sudah sign in.')
                 ->with('type', 'info');
+        }
+
+        $restrictedPaths = [
+            [
+                'patterns' => [
+                    'master/user*',
+                    'master/*/delete/*',
+                    'transaksi/*/delete/*',
+                ],
+                'minRoleId' => 1,
+            ],
+            [
+                'patterns' => [
+                    'master/kemasan*',
+                    'master/obat*',
+                    'master/pelanggan/update/*',
+                    'transaksi/stok/update/*'
+                ],
+                'minRoleId' => 2,
+            ],
+        ];
+
+        foreach ($restrictedPaths as $restrictedPath) {
+            if (session()->get('role_id') > $restrictedPath['minRoleId'] && in_array(true, array_map(fn ($item) => fnmatch($item, $path), $restrictedPath['patterns']))) {
+                return redirect()
+                    ->back()
+                    ->with('message', 'Anda tidak memiliki akses ke halaman tersebut.')
+                    ->with('type', 'warning');
+            }
         }
     }
 
