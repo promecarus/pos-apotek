@@ -51,10 +51,8 @@ class User extends Migration
             ],
         ]);
         $this->forge->addKey('id', true);
-        $this->forge->addUniqueKey([
-            'username',
-            'email'
-        ]);
+        $this->forge->addUniqueKey('email');
+        $this->forge->addUniqueKey('username');
         $this->forge->addForeignKey('role_id', 'roles', 'id');
         $this->forge->createTable('users');
     }

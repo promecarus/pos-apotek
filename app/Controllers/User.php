@@ -78,23 +78,32 @@ class User extends BaseController
     public function update($id)
     {
         $data = [
+            'email' => $this->request->getVar('email'),
+            'username' => $this->request->getVar('username'),
             'nama' => $this->request->getVar('nama'),
             'role_id' => $this->request->getVar('role_id'),
         ];
-
-        if ($this->request->getVar('email') != $this->userModel->find($id)['email']) {
-            $data['email'] = $this->request->getVar('email');
-        }
-
-        if ($this->request->getVar('username') != $this->userModel->find($id)['username']) {
-            $data['username'] = $this->request->getVar('username');
-        }
 
         if ($this->request->getVar('password')) {
             $data['password'] = password_hash($this->request->getVar('password'), PASSWORD_DEFAULT);
         }
 
+        if ($this->userModel->where('email', $data['email'])->where('id !=', $id)->first()) {
+            return redirect()
+                ->back()
+                ->with('message', 'Email sudah terdaftar')
+                ->with('type', 'error');
+        }
+
+        if ($this->userModel->where('username', $data['username'])->where('id !=', $id)->first()) {
+            return redirect()
+                ->back()
+                ->with('message', 'Username sudah terdaftar')
+                ->with('type', 'error');
+        }
+
         $this->userModel->update($id, $data);
+
         return redirect()
             ->back()
             ->with('message', 'Data berhasil diupdate, sign in ulang untuk melihat perubahan')

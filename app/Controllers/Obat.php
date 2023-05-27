@@ -55,31 +55,41 @@ class Obat extends BaseController
 
     public function store()
     {
-        $obat = $this->obatModel->where('nama', $this->request->getVar('nama'))->first();
-        if ($obat) {
+        $data = [
+            'nama' => esc($this->request->getVar('nama')),
+            'keterangan' => esc($this->request->getVar('keterangan')),
+        ];
+
+        if ($this->obatModel->where('nama', $data['nama'])->first()) {
             return redirect()
                 ->back()
                 ->with('message', 'Nama obat sudah ada')
                 ->with('type', 'error');
-        } else {
-            $this->obatModel->insert([
-                'nama' => esc($this->request->getVar('nama')),
-                'keterangan' => esc($this->request->getVar('keterangan')),
-            ]);
-
-            return redirect()
-                ->back()
-                ->with('message', 'Data berhasil ditambahkan')
-                ->with('type', 'success');
         }
+
+        $this->obatModel->insert($data);
+
+        return redirect()
+            ->back()
+            ->with('message', 'Data berhasil ditambahkan')
+            ->with('type', 'success');
     }
 
     public function update($id)
     {
-        $this->obatModel->update($id, [
+        $data = [
             'nama' => esc($this->request->getVar('nama')),
             'keterangan' => esc($this->request->getVar('keterangan')),
-        ]);
+        ];
+
+        if ($this->obatModel->where('nama', $data['nama'])->first()) {
+            return redirect()
+                ->back()
+                ->with('message', 'Nama obat sudah ada')
+                ->with('type', 'error');
+        }
+
+        $this->obatModel->update($id, $data);
 
         return redirect()
             ->back()

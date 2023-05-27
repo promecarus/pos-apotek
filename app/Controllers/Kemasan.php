@@ -69,6 +69,7 @@ class Kemasan extends BaseController
                 ->with('message', 'Data sudah ada')
                 ->with('type', 'warning');
         }
+
         $this->kemasanModel->insert($data);
 
         return redirect()
@@ -79,11 +80,20 @@ class Kemasan extends BaseController
 
     public function update($id)
     {
-        $this->kemasanModel->update($id, [
+        $data = [
             'angka' => $this->request->getVar('angka'),
             'satuan' => esc($this->request->getVar('satuan')),
             'keterangan' => esc($this->request->getVar('keterangan')),
-        ]);
+        ];
+
+        if ($this->kemasanModel->where($data)->first()) {
+            return redirect()
+                ->back()
+                ->with('message', 'Data sudah ada')
+                ->with('type', 'warning');
+        }
+
+        $this->kemasanModel->update($id, $data);
 
         return redirect()
             ->back()
