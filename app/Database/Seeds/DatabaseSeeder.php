@@ -150,6 +150,11 @@ class DatabaseSeeder extends Seeder
 
         $this->db->table('pelanggan')->insertBatch([
             [
+                'nama' => 'Umum',
+                'alamat' => null,
+                'telepon' => null
+            ],
+            [
                 'nama' => 'Muhammad',
                 'alamat' => 'Jl. Al',
                 'telepon' => '081234567890'

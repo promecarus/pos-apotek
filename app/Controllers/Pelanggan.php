@@ -32,7 +32,6 @@ class Pelanggan extends BaseController
                     maxlength: 255
                 },
                 telepon: {
-                    required: true,
                     pattern: /^(?:\+?62|0)[-\s]?[1-9]\d{1,3}[-\s]?\d{1,4}[-\s]?\d{1,4}$/,
                     maxlength: 255
                 }
@@ -48,7 +47,6 @@ class Pelanggan extends BaseController
                     maxlength: "Alamat maksimal 255 karakter"
                 },
                 telepon: {
-                    required: "Telepon tidak boleh kosong",
                     pattern: "Telepon tidak valid",
                     maxlength: "Telepon maksimal 255 karakter"
                 }
