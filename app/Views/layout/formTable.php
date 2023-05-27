@@ -20,13 +20,18 @@
                     <?= $this->renderSection("content") ?>
                     <div class="row">
                         <?php if (uri_string() != 'master/user') : ?>
-                        <div class="col">
-                            <button class="btn btn-primary btn-block" onclick="storeData()">Store</button>
-                        </div>
+                            <div class="col">
+                                <button class="btn btn-primary btn-block" onclick="storeData()">Store</button>
+                            </div>
                         <?php endif; ?>
-                        <div class="col">
-                            <button class="btn btn-warning btn-block" onclick="updateData()">Update</button>
-                        </div>
+                        <?php if (
+                            ((uri_string() != 'master/pelanggan') && (uri_string() != 'transaksi/stok') && session()->get('role_id') < 3) ||
+                            (session()->get('role_id')) < 3
+                        ) : ?>
+                            <div class="col">
+                                <button class="btn btn-warning btn-block" onclick="updateData()">Update</button>
+                            </div>
+                        <?php endif; ?>
                     </div>
                 </form>
             </div>

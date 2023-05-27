@@ -60,24 +60,22 @@
                 return column
             })
 
-            columns.push({
-                data: null,
-                title: 'action',
-                render: function(row) {
-                    return `
-                        <div class="col">
-                            <div class="row">
-                                <div class="col">
-                                    <button class="btn btn-warning btn-block" onclick="editData(${row.id})">Edit</button>
-                                </div>
-                                <div class="col">
-                                    <a class="btn btn-danger btn-block" href="/${type}/<?= strtolower($title) ?>/delete/${row.id}">Delete</a>
-                                </div>
-                            </div>
-                        </div>
-                    `;
-                }
-            });
+            <?php if (session()->get('role_id') < 3) : ?>
+                columns.push({
+                    data: null,
+                    title: 'action',
+                    render: function(row) {
+                        return `<div class="col">
+                                    <div class="row">
+                                        <div class="col"><button class="btn btn-warning btn-block" onclick="editData(${row.id})">Edit</button></div>
+                                        <?php if (session()->get('role_id') < 2) : ?>
+                                            <div class="col"><a class="btn btn-danger btn-block" href="/${type}/<?= strtolower($title) ?>/delete/${row.id}">Delete</a></div>
+                                        <?php endif ?>
+                                    </div>
+                                </div>`
+                    }
+                })
+            <?php endif ?>
 
             $("#table")
                 .DataTable({
@@ -87,7 +85,9 @@
                     buttons: ["copy", "csv", "excel", "pdf", "print", "colvis"],
                     responsive: true,
                 })
-                .buttons()
+            <?php if (session()->get('role_id') < 3) : ?>
+                    .buttons()
+            <?php endif ?>
                 .container()
                 .appendTo("#table_wrapper .col-md-6:eq(0)")
         } else {

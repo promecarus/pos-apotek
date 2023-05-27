@@ -17,52 +17,62 @@
                         <p>Dashboard</p>
                     </a>
                 </li>
-                <li class="nav-item <?= explode("/", service('uri')->getPath())[0] == 'master' ? 'menu-open' : '' ?>"><a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-key"></i>
-                        <p>Master<i class="fas fa-angle-left right"></i></p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="<?= base_url('master/kemasan') ?>" class="nav-link <?= uri_string() == 'master/kemasan' ? 'active' : '' ?>"><i class="fas fa-box nav-icon"></i>
-                                <p>Kemasan</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="<?= base_url('master/obat') ?>" class="nav-link <?= uri_string() == 'master/obat' ? 'active' : '' ?>"><i class="fas fa-pills nav-icon"></i>
-                                <p>Obat</p>
-                            </a>
-                        </li>
+                <?php if (session()->get('role_id') < 2) : ?>
+                    <li class="nav-item <?= explode("/", service('uri')->getPath())[0] == 'master' ? 'menu-open' : '' ?>"><a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-key"></i>
+                            <p>Master<i class="fas fa-angle-left right"></i></p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                        <?php endif ?>
+                        <?php if (session()->get('role_id') < 3) : ?>
+                            <li class="nav-item">
+                                <a href="<?= base_url('master/kemasan') ?>" class="nav-link <?= uri_string() == 'master/kemasan' ? 'active' : '' ?>"><i class="fas fa-box nav-icon"></i>
+                                    <p>Kemasan</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?= base_url('master/obat') ?>" class="nav-link <?= uri_string() == 'master/obat' ? 'active' : '' ?>"><i class="fas fa-pills nav-icon"></i>
+                                    <p>Obat</p>
+                                </a>
+                            </li>
+                        <?php endif ?>
                         <li class="nav-item">
                             <a href="<?= base_url('master/pelanggan') ?>" class="nav-link <?= uri_string() == 'master/pelanggan' ? 'active' : '' ?>"><i class="fas fa-users nav-icon"></i>
                                 <p>Pelanggan</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="<?= base_url('master/user') ?>" class="nav-link <?= uri_string() == 'master/user' ? 'active' : '' ?>"><i class="fas fa-user nav-icon"></i>
-                                <p>User</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item <?= explode("/", service('uri')->getPath())[0] == 'transaksi' ? 'menu-open' : '' ?>"><a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-table"></i>
-                        <p>Transaksi<i class="fas fa-angle-left right"></i></p>
-                    </a>
-                    <ul class="nav nav-treeview">
+                        <?php if (session()->get('role_id') < 2) : ?>
+                            <li class="nav-item">
+                                <a href="<?= base_url('master/user') ?>" class="nav-link <?= uri_string() == 'master/user' ? 'active' : '' ?>"><i class="fas fa-user nav-icon"></i>
+                                    <p>User</p>
+                                </a>
+                            </li>
+                        <?php endif ?>
+                        <?php if (session()->get('role_id') < 2) : ?>
+                        </ul>
+                    </li>
+                <?php endif ?>
+                <?php if (session()->get('role_id') < 2) : ?>
+                    <li class="nav-item <?= explode("/", service('uri')->getPath())[0] == 'transaksi' ? 'menu-open' : '' ?>"><a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-table"></i>
+                            <p>Transaksi<i class="fas fa-angle-left right"></i></p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                        <?php endif ?>
                         <li class="nav-item">
                             <a href="<?= base_url('transaksi/penjualan') ?>" class="nav-link <?= uri_string() == 'transaksi/penjualan' ? 'active' : '' ?>"><i class="fas fa-shopping-cart nav-icon"></i>
                                 <p>Penjualan</p>
                             </a>
                         </li>
-                    </ul>
-                    <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="<?= base_url('transaksi/stok') ?>" class="nav-link <?= uri_string() == 'transaksi/stok' ? 'active' : '' ?>"><i class="fas fa-boxes nav-icon"></i>
                                 <p>Stok</p>
                             </a>
                         </li>
-                    </ul>
-                </li>
+                        <?php if (session()->get('role_id') < 2) : ?>
+                        </ul>
+                    </li>
+                <?php endif ?>
                 <li class="nav-item">
                     <a href="<?= base_url("auth/signout") ?>" class="nav-link"><i class="nav-icon fas fa-sign-out-alt"></i>
                         <p>Sign Out</p>
