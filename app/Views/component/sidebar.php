@@ -23,22 +23,22 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="<?= base_url('master/kemasan') ?>" class="nav-link <?= uri_string() == 'master/kemasan' ? 'active' : '' ?>"><i class="far fa-circle nav-icon"></i>
+                            <a href="<?= base_url('master/kemasan') ?>" class="nav-link <?= uri_string() == 'master/kemasan' ? 'active' : '' ?>"><i class="fas fa-box nav-icon"></i>
                                 <p>Kemasan</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('master/obat') ?>" class="nav-link <?= uri_string() == 'master/obat' ? 'active' : '' ?>"><i class="far fa-circle nav-icon"></i>
+                            <a href="<?= base_url('master/obat') ?>" class="nav-link <?= uri_string() == 'master/obat' ? 'active' : '' ?>"><i class="fas fa-pills nav-icon"></i>
                                 <p>Obat</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('master/pelanggan') ?>" class="nav-link <?= uri_string() == 'master/pelanggan' ? 'active' : '' ?>"><i class="far fa-circle nav-icon"></i>
+                            <a href="<?= base_url('master/pelanggan') ?>" class="nav-link <?= uri_string() == 'master/pelanggan' ? 'active' : '' ?>"><i class="fas fa-users nav-icon"></i>
                                 <p>Pelanggan</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('master/user') ?>" class="nav-link <?= uri_string() == 'master/user' ? 'active' : '' ?>"><i class="far fa-circle nav-icon"></i>
+                            <a href="<?= base_url('master/user') ?>" class="nav-link <?= uri_string() == 'master/user' ? 'active' : '' ?>"><i class="fas fa-user nav-icon"></i>
                                 <p>User</p>
                             </a>
                         </li>
@@ -50,14 +50,14 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="<?= base_url('transaksi/penjualan') ?>" class="nav-link <?= uri_string() == 'transaksi/penjualan' ? 'active' : '' ?>"><i class="far fa-circle nav-icon"></i>
+                            <a href="<?= base_url('transaksi/penjualan') ?>" class="nav-link <?= uri_string() == 'transaksi/penjualan' ? 'active' : '' ?>"><i class="fas fa-shopping-cart nav-icon"></i>
                                 <p>Penjualan</p>
                             </a>
                         </li>
                     </ul>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="<?= base_url('transaksi/stok') ?>" class="nav-link <?= uri_string() == 'transaksi/stok' ? 'active' : '' ?>"><i class="far fa-circle nav-icon"></i>
+                            <a href="<?= base_url('transaksi/stok') ?>" class="nav-link <?= uri_string() == 'transaksi/stok' ? 'active' : '' ?>"><i class="fas fa-boxes nav-icon"></i>
                                 <p>Stok</p>
                             </a>
                         </li>

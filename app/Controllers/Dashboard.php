@@ -15,7 +15,7 @@ class Dashboard extends BaseController
                 'Kemasan' => [
                     'bg' => 'info',
                     'value' => (new \App\Models\KemasanModel())->countAll(),
-                    'icon' => 'cubes',
+                    'icon' => 'box',
                     'link' => 'master/kemasan'
                 ],
                 'Obat' => [
@@ -35,6 +35,12 @@ class Dashboard extends BaseController
                     'value' => (new \App\Models\UserModel())->countAll(),
                     'icon' => 'user',
                     'link' => 'master/user'
+                ],
+                'Penjualan' => [
+                    'bg' => 'secondary',
+                    'value' => 100,
+                    'icon' => 'shopping-cart',
+                    'link' => 'transaksi/penjualan'
                 ],
                 'Stok' => [
                     'bg' => 'danger',
