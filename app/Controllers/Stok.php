@@ -107,6 +107,8 @@ class Stok extends BaseController
         $this->stokModel->update($id, [
             'obat_id' => $this->request->getVar('obat_id'),
             'kemasan_id' => $this->request->getVar('kemasan_id'),
+            'beli' => $this->request->getVar('beli'),
+            'jual' => $this->request->getVar('jual'),
             'jumlah' => $this->request->getVar('jumlah'),
             'kedarluwarsa' => date('Y-m-d', strtotime(str_replace('/', '-', $this->request->getVar('kedarluwarsa')))),
         ]);
