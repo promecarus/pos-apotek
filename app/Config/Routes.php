@@ -49,6 +49,9 @@ $routes->add('/master/user/(:any)(/(:any))?', 'User::$1/$2');
 $routes->add('/transaksi/stok', 'Stok::index');
 $routes->add('/transaksi/stok/(:any)(/(:any))?', 'Stok::$1/$2');
 
+$routes->add('/transaksi/temp-pembelian', 'TempPembelian::index');
+$routes->add('/transaksi/temp-pembelian/(:any)(/(:any))?', 'TempPembelian::$1/$2');
+
 $routes->add('/transaksi/penjualan', 'Penjualan::index');
 $routes->add('/transaksi/penjualan/(:any)(/(:any))?', 'Penjualan::$1/$2');
 
