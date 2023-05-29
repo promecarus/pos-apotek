@@ -38,7 +38,7 @@ class Dashboard extends BaseController
                 ],
                 'Penjualan' => [
                     'bg' => 'secondary',
-                    'value' => 100,
+                    'value' => (new \App\Models\PenjualanModel())->countAll(),
                     'icon' => 'shopping-cart',
                     'link' => 'transaksi/penjualan'
                 ],
